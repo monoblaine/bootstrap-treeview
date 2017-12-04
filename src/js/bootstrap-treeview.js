@@ -142,7 +142,9 @@
 
 			// Search methods
 			search: $.proxy(this.search, this),
-			clearSearch: $.proxy(this.clearSearch, this)
+			clearSearch: $.proxy(this.clearSearch, this),
+
+            getTree: $.proxy(function () { return this.tree; }, this)
 		};
 	};
 
