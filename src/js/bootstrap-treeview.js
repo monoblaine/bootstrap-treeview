@@ -1219,7 +1219,7 @@
 
 	// Prevent against multiple instantiations,
 	// handle updates and method calls
-	$.fn[pluginName] = function (options, args) {
+	var pluginFn = $.fn[pluginName] = function (options, args) {
 
 		var result;
 
@@ -1250,4 +1250,7 @@
 		return result || this;
 	};
 
+    pluginFn.overrideDefaults = function (cfg) {
+        $.extend(true, _default, cfg);
+    };
 })(jQuery, window, document);
